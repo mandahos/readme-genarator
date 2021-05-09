@@ -1,9 +1,10 @@
 //modules
-const inquirer = require('inquirer');
-const fs = require('fs');
-const util = require('util');
+
+const inquirer = require("inquirer");
+const fs = require("fs");
+const util = require("util");
 const genReadme = require("./utils/generateMarkdowns");
-const generateMarkdown = require('./utils/generateMarkdowns');
+const generateMarkdown = require("./utils/generateMarkdowns");
 const writeFileAsync = util.promisify(fs.writeFile);
 
 //generate questions
@@ -12,34 +13,57 @@ function promptUser() {
     [
         {
             type: 'input',
-            message="What's the project title?",
+            message: "What's the project title?",
             name: 'title',
-            
         },
         {
             type: 'input',
-            message="Description of Project?",
-            name: 'description',
-            
+            message: "Description of Project?",
+            name: 'description',  
         },
         {
             type: 'input',
-            message="What was used to Build Project",
-            name: 'built-with',
-            
+            message: "Table of Contents:",
+            name: 'table-contents',  
         },
         {
             type: 'input',
-            message="What's the project website link?",
-            name: 'website-link',
-           
+            message: "Anything installed to make it work?",
+            name: 'install',  
         },
         {
             type: 'input',
-            message="Who made the project?",
-            name: 'contribution',
-            
-        }
+            message: "How will the project be used",
+            name: 'usage',  
+        },
+        {
+            type: 'input',
+            message: "What was used to Build Project",
+            name: 'license', 
+           choices: [
+              "Apache",
+              "GNU",
+              "MIT",
+              "ISC",
+              "none apply"
+            ]
+        },
+        {
+            type: 'input',
+            message: "Who made the project?",
+            name: 'contribution',  
+        },
+        {
+            type: 'input',
+            message: "Any tests included?",
+            name: 'tests',
+        },
+        {
+            type: 'input',
+            message: "Any questions, please feel free to reachout",
+            name: 'questions',
+        },
+       
     ]);
 }
  async function init() {
