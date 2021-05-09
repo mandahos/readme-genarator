@@ -37,14 +37,12 @@ function promptUser() {
         },
         {
             type: 'input',
-            message: "What was used to Build Project",
+            message: "What license did you use if any?",
             name: 'license', 
            choices: [
               "Apache",
-              "GNU",
               "MIT",
-              "ISC",
-              "none apply"
+              "ISC"              
             ]
         },
         {
@@ -68,8 +66,9 @@ function promptUser() {
  async function init() {
      try {
          const data = await promptUser();
-         const genarateInput = generateMarkdown(data);
-         await writeFileAsync('', generateMarkdown);
+         const generateInput = generateMarkdown(data);
+         await writeFileAsync('./utils/README.', generateInput);
+         await writeFileAsync("./utils/license", license);
      }
      catch(errors) {
 
