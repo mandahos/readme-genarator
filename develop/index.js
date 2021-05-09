@@ -4,9 +4,8 @@ const fs = require('fs');
 const {message} = require('status')
 
 //generate questions
-function promptUser(){
-    return inquirer.prompt
-(
+function writeToFile(fileName, data) {
+inquirer.prompt(
     [
         {
             type: 'input',
@@ -41,3 +40,4 @@ function promptUser(){
     ]  
 )
 };
+
