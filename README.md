@@ -10,7 +10,7 @@ a node.js file that helps create a dynamic readme genarator
 *
 
 ## Website
-Put link here
+https://mandahos.github.io/readme-genarator/
 
 # Controniton
 Made with ✨ by Amanda
