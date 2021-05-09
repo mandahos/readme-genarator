@@ -1,16 +1,20 @@
 {
   "name": "readme-genarator",
   "version": "1.0.0",
-  "description": "a readme. generator",
-  "main": "app.js",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "test": "hello"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mandahos/readme-genarator.git"
   },
-  "author": "Amanda",
+  "keywords": [
+    "readme",
+    "genarator"
+  ],
+  "author": "MandaHos",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/mandahos/readme-genarator/issues"

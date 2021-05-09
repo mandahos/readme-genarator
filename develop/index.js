@@ -1,43 +1,56 @@
 //modules
 const inquirer = require('inquirer');
 const fs = require('fs');
-const {message} = require('status')
+const util = require('util');
+const genReadme = require("./utils/generateMarkdowns");
+const generateMarkdown = require('./utils/generateMarkdowns');
+const writeFileAsync = util.promisify(fs.writeFile);
 
 //generate questions
-function writeToFile(fileName, data) {
-inquirer.prompt(
+function promptUser() {
+ return inquirer.prompt(
     [
         {
             type: 'input',
             message="What's the project title?",
             name: 'title',
-            validate: (value) =>{if(value){return ture} else {return 'please enter your README. specs'}},
+            
         },
         {
             type: 'input',
             message="Description of Project?",
             name: 'description',
-            validate: (value) =>{if(value){return ture} else {return 'please enter your README. specs'}},
+            
         },
         {
             type: 'input',
             message="What was used to Build Project",
             name: 'built-with',
-            validate: (value) =>{if(value){return ture} else {return 'please enter your README. specs'}},
+            
         },
         {
             type: 'input',
             message="What's the project website link?",
             name: 'website-link',
-            validate: (value) =>{if(value){return ture} else {return 'please enter your README. specs'}},
+           
         },
         {
             type: 'input',
             message="Who made the project?",
             name: 'contribution',
-            validate: (value) =>{if(value){return ture} else {return 'please enter your README. specs'}},
-        },
-    ]  
-)
-};
+            
+        }
+    ]);
+}
+ async function init() {
+     try {
+         const answers = await promptUser();
+         const genarateInput = generateMarkdown(answers);
+         await writeFileAsync('', generateMarkdown);
+     }
+     catch(errors) {
+
+     }
+ }
+ init();
 
