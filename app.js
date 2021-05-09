@@ -4,7 +4,9 @@ const fs = require('fs');
 const {message} = require('status')
 
 //generate questions
-inquirer.prompt (
+function promptUser(){
+    return inquirer.prompt
+(
     [
         {
             type: 'input',
@@ -14,10 +16,28 @@ inquirer.prompt (
         },
         {
             type: 'input',
-            message="What's the project title?",
-            name: 'title',
+            message="Description of Project?",
+            name: 'description',
             validate: (value) =>{if(value){return ture} else {return 'please enter your README. specs'}},
-        }    
-    ]
-
+        },
+        {
+            type: 'input',
+            message="What was used to Build Project",
+            name: 'built-with',
+            validate: (value) =>{if(value){return ture} else {return 'please enter your README. specs'}},
+        },
+        {
+            type: 'input',
+            message="What's the project website link?",
+            name: 'website-link',
+            validate: (value) =>{if(value){return ture} else {return 'please enter your README. specs'}},
+        },
+        {
+            type: 'input',
+            message="Who made the project?",
+            name: 'contribution',
+            validate: (value) =>{if(value){return ture} else {return 'please enter your README. specs'}},
+        },
+    ]  
 )
+};
