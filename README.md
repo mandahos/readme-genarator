@@ -12,7 +12,7 @@ a node.js file that helps create a dynamic readme genarator
 ## Website
 https://mandahos.github.io/readme-genarator/
 
-# Controniton
+# Contribution
 Made with ✨ by Amanda
 
 ### 
