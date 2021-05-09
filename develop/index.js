@@ -3,7 +3,6 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const util = require("util");
-const genReadme = require("./utils/generateMarkdowns");
 const generateMarkdown = require("./utils/generateMarkdowns");
 const writeFileAsync = util.promisify(fs.writeFile);
 
@@ -68,8 +67,8 @@ function promptUser() {
 }
  async function init() {
      try {
-         const answers = await promptUser();
-         const genarateInput = generateMarkdown(answers);
+         const data = await promptUser();
+         const genarateInput = generateMarkdown(data);
          await writeFileAsync('', generateMarkdown);
      }
      catch(errors) {
