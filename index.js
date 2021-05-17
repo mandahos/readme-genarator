@@ -4,9 +4,10 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 const util = require("util");
 const generateMarkdown = require("./utils/generateMarkdowns");
-const writeFileAsync = util.promisify(fs.writeFile);
+
 
 //generate questions
+
 function promptUser() {
  return inquirer.prompt(
     [
@@ -36,13 +37,14 @@ function promptUser() {
             name: 'usage',  
         },
         {
-            type: 'input',
+            type: 'list',
             message: "What license did you use if any?",
             name: 'license', 
            choices: [
               "Apache",
               "MIT",
-              "ISC"              
+              "ISC",
+              "none"              
             ]
         },
         {
@@ -63,14 +65,23 @@ function promptUser() {
        
     ]);
 }
+
+
+const writeFileAsync = util.promisify(fs.writeFile);
+
  async function init() {
      try {
          const data = await promptUser();
+         console.log("Responses:", data);
+
          const generateInput = generateMarkdown(data);
-         await writeFileAsync('./utils/README.', generateInput);
-         await writeFileAsync("./utils/license", license);
+         console.log(mardown);
+
+        //  await writeFileAsync('./utils/README.', generateInput);
+         await writeFileAsync('./utils/README.md', generateInput);
      }
      catch(errors) {
+         console.log
 
      }
  }

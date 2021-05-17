@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/mandahos/readme-genarator/issues"
   },
-  "homepage": "https://github.com/mandahos/readme-genarator#readme"
+  "homepage": "https://github.com/mandahos/readme-genarator#readme",
+  "dependencies": {
+    "inquirer": "^8.0.0"
+  }
 }
