@@ -72,8 +72,8 @@ function generateMarkdown(data) {
 
   ## Questions
   ❓${data.questions}
-  Find me on Github: [${data.username}](https://github.com${data.username})
-  No github? Email me: ${data.email}
+  Find me on Github: [mandahos](https://github.com/mandahos)
+  No github? Email me: hoshor.manda@gmail.com
 
   This README. was created with ✨ by [readme-genarator](https://mandahos.github.io/readme-genarator/)
   `;

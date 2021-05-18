@@ -59,7 +59,7 @@ function promptUser() {
         },
         {
             type: 'input',
-            message: "Any questions, please feel free to reachout",
+            message: "Any questions, please feel free to reachout at hoshor.manda@gmail or GitHub: Mandahos",
             name: 'questions',
         },
        
