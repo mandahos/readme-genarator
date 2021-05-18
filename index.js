@@ -74,14 +74,14 @@ const writeFileAsync = util.promisify(fs.writeFile);
          const data = await promptUser();
          console.log("Responses:", data);
 
-         const generateInput = generateMarkdown(data);
-         console.log(mardown);
+        //  const generateInput = generateMarkdown(data);
+        //  console.log(markdown);
 
         //  await writeFileAsync('./utils/README.', generateInput);
-         await writeFileAsync('./utils/README.md', generateInput);
+         await writeFileAsync('./utils/README.md', generateMarkdown(data));
      }
      catch(errors) {
-         console.log
+        console.log(errors)
 
      }
  }
